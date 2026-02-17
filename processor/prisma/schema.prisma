@@ -12,6 +12,7 @@ datasource db {
   provider = "postgresql"
   
   
+  
 }
 
 model User{
@@ -43,10 +44,7 @@ model Trigger {
   type  AvailabelTriggers @relation(fields: [triggrId], references: [id])
   
   zap   Zap @relation( fields: [zapId], references:[id])
-
-  sortingOrder Int  @default(0)
   
-
 
 }
 
@@ -58,6 +56,8 @@ model Action{
   zap  Zap   @relation(fields: [zapid],references: [id])
  
   type AvailableAction @relation(fields: [actionId],references: [id])
+  sortingOrder Int  @default(0)
+
 }
 
 model AvailableAction{

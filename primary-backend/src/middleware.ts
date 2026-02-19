@@ -1,11 +1,29 @@
 import {NextFunction , Request , Response} from "express";
-
+import jwt from "jsonwebtoken";
+import { JWT_PASSWORD } from "./config";
 
 
 export function authMiddleware(req:Request, res:Response, next:Function) {
-    // Implement your authentication logic here
-    // For example, you can check for a token in the request headers
-    const token = req.headers['authorization']; 
+
+    const token= req.headers.authorization as unknown as string;
+   try{
+   const payload = jwt.verify(token, JWT_PASSWORD);
+        //@ts-ignore
+        req.id =payload.id
+        next()
+    }
+    catch(e){
+        res.status(403).json({
+            message:"You are not logged in"
+        })
+    }
 
 
 }
+    
+
+ 
+        //@ts-ignore
+   
+
+

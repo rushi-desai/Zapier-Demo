@@ -3,3 +3,4 @@ dist/
 .env
 # TypeScript build cache
 *.tsbuildinfo
+/src/generated/prisma

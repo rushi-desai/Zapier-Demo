@@ -5,10 +5,11 @@ import { PrimaryButton } from "./butoons/PrimaryButton"
 
 export const Appbar=()=>{
     const router = useRouter()
-    return <div className="flex border-b justify-between">
-       <div className ="flex flex-col justify-center px-15 py-4 text-2xl font-extrabold text-[#413735]">
-        Zapier
-       </div>
+    return <div className="pl-7 flex border-y border-[#514f4c] justify-between bg-[#fff6f0]">
+     <div className="relative inline-block px-6 py-4 text-3xl font-extrabold text-[#413735]">
+         Zapier
+  <div className="ml-1 mb-8 absolute left-0 -bottom-1 h-1 w-5 bg-[#FF4A00]"></div>
+</div>
 
        <div className="flex m-2">
        
